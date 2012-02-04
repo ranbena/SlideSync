@@ -10,7 +10,7 @@ Installation
 2. Create an HTML file based on "examples/index.html".
 3. Load the plugins that match your video and presentation type. These can be loaded from "source/plugins".
 4. Configure SlideSync.init to your plugins and the public ids.
-5. Fill in the "script" array with the appropriate time signatures. Every signature means "next slide".
+5. Fill in the `script` array with the appropriate time signatures. Every signature means "next slide".
 
 Example configuration
 ---------------------
@@ -48,5 +48,5 @@ Roadmap
 
 1. More plugins on demand.
 2. Detecting presentation navigation and moving video accordingly.
-3. Alternative "script" configuration enabling to set a slide number to a time signature.
+3. Alternative `script` configuration enabling to set a slide number to a time signature.
 4. Using inheretance for video and slide classes.
