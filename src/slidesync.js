@@ -1,3 +1,7 @@
+//     SlideSync.js
+//     (c) 2012 Ran Ben Aharon
+//     SlideSync.js may be freely distributed under the MIT license.
+
 var SlideSync = new function(){
     var script, video, slide;
     
