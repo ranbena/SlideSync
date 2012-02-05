@@ -18,12 +18,12 @@ Example configuration
     SlideSync.init({
     
         "video": {
-            "object": Youtube,
+            "plugin": Youtube,
             "id": "qspJiaIIIKI"
         },
         
         "slide": {
-            "object": Slideshare,
+            "plugin": Slideshare,
             "id": "mobilewebappdev-120203041131-phpapp02"
         },
         

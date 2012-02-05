@@ -9,8 +9,8 @@ var SlideSync = new function(){
         script = normalizeScript(cfg.script);
         
         // video/slide objects
-        video = new cfg.video.object();
-        slide = new cfg.slide.obj();
+        video = new cfg.video.plugin();
+        slide = new cfg.slide.plugin();
         
         // onload
         window.addEventListener("load", function(){
