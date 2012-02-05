@@ -11,17 +11,11 @@ function Youtube(){
     // onReady
     window.onYouTubePlayerReady = function() {
         player = document.getElementById("myytplayer");
-        player.addEventListener("onStateChange", "onytplayerStateChange");
+        player.addEventListener("onStateChange", "onVideoStatusChanged");
     };
     
     // onStateChange
-    window.onytplayerStateChange = function(newState) {
-        if (newState === 1){
-            onPlay();
-        } else {
-            onStop();
-        }
-    };
+    window.onVideoStatusChanged = onStatusChanged;
 
     this.init = function(_options){
         for (var key in _options){
@@ -36,13 +30,21 @@ function Youtube(){
             "8",
             null,
             null,
-            { allowScriptAccess: "always" }, // params
+            { allowScriptAccess: "always", allowfullscreen: "true"}, // params
             { id: "myytplayer" } // attributes
         );
     };
     
     this.update = function(time){
         player.seekTo(time, true);
+    };
+    
+    function onStatusChanged(newState) {
+        if (newState === 1){
+            onPlay();
+        } else {
+            onStop();
+        }
     };
     
     function onPlay(){
