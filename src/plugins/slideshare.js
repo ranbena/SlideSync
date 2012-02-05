@@ -1,20 +1,42 @@
 function Slideshare(){
-    var player, statusInterval, onChangeCallback;
+    var player;
     
-    this.init = function(cfg){
-        onChangeCallback = cfg.onChangeCallback || function(){};
+    var options = {
+        "width": 598,
+        "height": 480,
+        "swf": "http://static.slidesharecdn.com/swf/ssplayer2.swf"
+    };
+    
+    this.name = "slideshow";
+    
+    this.init = function(_options){        
+        for (var key in _options){
+            options[key] = _options[key];
+        }
         
-        var params = { allowScriptAccess: "always" };
-        var atts = { id: "ssplayer" };
-        var flashvars = { doc : cfg.doc };
-    
-        swfobject.embedSWF("http://static.slidesharecdn.com/swf/ssplayer2.swf"
-                 ,"ssplayer","598","480","8",null,flashvars,params, atts);
+        swfobject.embedSWF(
+            options.swf,
+            options.elementId,
+            options.width,
+            options.height,
+            "8",
+            null,
+            { doc : options.doc }, //flashvars
+            { allowScriptAccess: "always" }, //params
+            { id: options.elementId } // attributes
+        );
                  
-        player = document.getElementById("ssplayer");
+        player = document.getElementById(options.elementId);
     };
     
     this.update = function(n){
         player.jumpTo(n);
     };
 }
+
+// inheret
+Slideshare.inheritsFrom(SlidesPlugin);
+
+// instance
+var slideshare = new Slideshare();
+slideshare.register();

@@ -1,28 +1,44 @@
 function Youtube(){
-    var player, statusInterval, onChangeCallback;
+    var player, statusInterval;
     
+    var options = {
+        "width": 425,
+        "height": 356
+    };
+    
+    this.name = "youtube";
+        
     // onReady
-    window.onYouTubePlayerReady = function(playerId) {
-      player = document.getElementById("myytplayer");
-      player.addEventListener("onStateChange", "onytplayerStateChange");
+    window.onYouTubePlayerReady = function() {
+        player = document.getElementById("myytplayer");
+        player.addEventListener("onStateChange", "onytplayerStateChange");
     };
     
     // onStateChange
     window.onytplayerStateChange = function(newState) {
-       if (newState === 1){
-           onPlay();
-       } else {
-           onStop();
-       }
+        if (newState === 1){
+            onPlay();
+        } else {
+            onStop();
+        }
     };
 
-    this.init = function(cfg){
-        onChangeCallback = cfg.onChangeCallback || function(){};
+    this.init = function(_options){
+        for (var key in _options){
+            options[key] = _options[key];
+        }
         
-        var params = { allowScriptAccess: "always" };
-        var atts = { id: "myytplayer" };
-        swfobject.embedSWF("http://www.youtube.com/v/"+cfg.id+"?enablejsapi=1&playerapiid=ytplayer&version=3",
-                                   "ytapiplayer", "425", "356", "8", null, null, params, atts);
+        swfobject.embedSWF(
+            "http://www.youtube.com/v/"+options.id+"?enablejsapi=1&playerapiid=ytplayer&version=3",
+            options.elementId,
+            options.width,
+            options.height,
+            "8",
+            null,
+            null,
+            { allowScriptAccess: "always" }, // params
+            { id: "myytplayer" } // attributes
+        );
     };
     
     this.update = function(time){
@@ -31,7 +47,7 @@ function Youtube(){
     
     function onPlay(){
         statusInterval = setInterval(function(){
-            onChangeCallback(player.getCurrentTime());
+            options.onChangeCallback(player.getCurrentTime());
         }, 1000);
     }
     
@@ -39,3 +55,9 @@ function Youtube(){
         clearInterval(statusInterval);
     }
 }
+// inheret
+Youtube.inheritsFrom(VideoPlugin);
+
+// instance
+var youtube = new Youtube();
+youtube.register();

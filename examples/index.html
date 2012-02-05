@@ -6,7 +6,8 @@
         <title>SlideSync presentation</title>
      
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-        <script type="text/javascript" src="../src/slidesync.js"></script>   
+        <script type="text/javascript" src="../src/slidesync.js"></script>
+        <script type="text/javascript" src="../src/Plugin.js"></script>
         <script type="text/javascript" src="../src/plugins/youtube.js"></script>
         <script type="text/javascript" src="../src/plugins/slideshare.js"></script>
         
@@ -14,12 +15,10 @@
             SlideSync.init({
                 // youtube
                 "video": {
-                    "plugin": Youtube,
                     "id": "qspJiaIIIKI"
                 },
                 // slideshare
-                "slide": {
-                    "plugin": Slideshare,
+                "slides": {
                     "doc": "mobilewebappdev-120203041131-phpapp02"
                 },
                 // array of time in HH:MM:SS or MM:SS which indicate "next slide"
@@ -44,10 +43,10 @@
         <table width="100%">
             <tr>
                 <td width="30%">
-                    <div id="ytapiplayer"></div>
+                    <div id="video"></div>
                 </td>
                 <td width="70%">
-                    <div id="ssplayer"></div>
+                    <div id="slides"></div>
                 </td>
             </tr>
         </table>

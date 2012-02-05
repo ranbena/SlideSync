@@ -3,23 +3,31 @@
 //     SlideSync.js may be freely distributed under the MIT license.
 
 var SlideSync = new function(){
-    var script, video, slide;
-    
-    this.init = function(cfg){
-        script = normalizeScript(cfg.script);
+    var script, plugins = {};
+
+    this.PLUGIN = {
+        TYPES: {
+            VIDEO: "video",
+            SLIDES: "slides"
+        }
+    };
         
-        // video/slide objects
-        video = new cfg.video.plugin();
-        slide = new cfg.slide.plugin();
+    this.init = function(options){
+        script = normalizeScript(options.script);
         
         // onload
         window.addEventListener("load", function(){
-            cfg.video.onChangeCallback = onVideoTimeUpdate;
-            video.init(cfg.video);
+            options.video.elementId = "video";
+            options.video.onChangeCallback = onVideoTimeUpdate;
+            plugins.video.init(options.video);
             
-            cfg.slide.onChangeCallback = onSlideTimeUpdate;
-            slide.init(cfg.slide);
+            options.slides.elementId = "slides";
+            plugins.slides.init(options.slides);
         }, false);
+    };
+    
+    this.registerPlugin = function(plugin){
+        plugins[plugin.type] = plugin;
     };
     
     function onVideoTimeUpdate(newTime){
@@ -36,11 +44,11 @@ var SlideSync = new function(){
             }
         }
         
-        slide.update(slideNum);
+        plugins.slides.update(slideNum);
     }
     
     function onSlideTimeUpdate(n){
-        video.update(n-1);
+        plugins.video.update(n-1);
     }
     
     function normalizeScript(origScript){
@@ -75,3 +83,5 @@ var SlideSync = new function(){
         return h + m + s;
     }
 };
+
+
