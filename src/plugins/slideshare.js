@@ -6,7 +6,7 @@ function Slideshare(){
         
         var params = { allowScriptAccess: "always" };
         var atts = { id: "ssplayer" };
-        var flashvars = { doc : cfg.id };
+        var flashvars = { doc : cfg.doc };
     
         swfobject.embedSWF("http://static.slidesharecdn.com/swf/ssplayer2.swf"
                  ,"ssplayer","598","480","8",null,flashvars,params, atts);
