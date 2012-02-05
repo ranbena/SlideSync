@@ -1,6 +1,6 @@
 An javascript sync tool for displaying a talk video alongside a presentation.
 
-Right now supports Youtube alongside Slideshare. Feel free to create or ask for the plugins you need.
+Right now supports Youtube/Vimeo alongside Slideshare. Feel free to create or ask for the plugins you need.
 
 
 Installation
@@ -17,12 +17,10 @@ Example configuration
 SlideSync.init({
     
     "video": {
-        "plugin": Youtube,
         "id": "qspJiaIIIKI"
     },
         
     "slide": {
-        "plugin": Slideshare,
         "doc": "mobilewebappdev-120203041131-phpapp02"
     },
     
