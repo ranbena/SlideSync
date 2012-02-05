@@ -22,7 +22,7 @@ function Slideshare(){
             "8",
             null,
             { doc : options.doc }, //flashvars
-            { allowScriptAccess: "always" }, //params
+            { allowScriptAccess: "always", allowfullscreen: "true"}, // params
             { id: options.elementId } // attributes
         );
                  
