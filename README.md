@@ -11,10 +11,10 @@ Installation
 3. Load the plugins that match your video and presentation type. These can be loaded from "source/plugins".
 
     
-    <script type="text/javascript" src="../src/plugins/youtube.js"></script>
-    <script type="text/javascript" src="../src/plugins/slideshare.js"></script>
+    <script type="text/javascript" src="plugins/youtube.js"></script>
+    <script type="text/javascript" src="plugins/slideshare.js"></script>
 
-4. [https://github.com/ranbena/SlideSync/wiki/Plugins](Configure your chosen plugins) in `SlideSync.init`.
+4. [Configure your chosen plugins](https://github.com/ranbena/SlideSync/wiki/Plugins) in `SlideSync.init`.
 
 5. Fill in the `script` array with the appropriate time signatures. Every signature means "next slide".
 
