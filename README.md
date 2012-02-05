@@ -13,34 +13,35 @@ Installation
 
 Example configuration
 ---------------------
-
-    SlideSync.init({
+```
+SlideSync.init({
     
-        "video": {
-            "plugin": Youtube,
-            "id": "qspJiaIIIKI"
-        },
+    "video": {
+        "plugin": Youtube,
+        "id": "qspJiaIIIKI"
+    },
         
-        "slide": {
-            "plugin": Slideshare,
-            "doc": "mobilewebappdev-120203041131-phpapp02"
-        },
+    "slide": {
+        "plugin": Slideshare,
+        "doc": "mobilewebappdev-120203041131-phpapp02"
+    },
+    
+    "script": [
+        "0:00",
+        "1:35",
+        "1:42",
+        "5:15",
+        "5:20",
+        "6:04",
+        "6:48",
+        "7:47",
+        "10:34",
+        "10:54",
+        "11:10"                    
+    ]    
         
-        "script": [
-            "0:00",
-            "1:35",
-            "1:42",
-            "5:15",
-            "5:20",
-            "6:04",
-            "6:48",
-            "7:47",
-            "10:34",
-            "10:54",
-            "11:10"                    
-        ]    
-        
-    });
+});
+```
     
 Roadmap
 -------
