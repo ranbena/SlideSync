@@ -7,9 +7,9 @@ Installation
 ------------
 
 1. Fork the project or download the zip.
-2. Create an HTML file based on "examples/index.html".
+2. Create an HTML file based on a page in [examples](https://github.com/ranbena/SlideSync/tree/master/examples).
 3. [Configure](https://github.com/ranbena/SlideSync/wiki/Plugins) your chosen plugins.
-4. Fill in the `script` array with the appropriate time signatures. Every signature means "next slide".
+4. Fill in the `script` array with the appropriate time signatures.
 
 Example configuration
 ---------------------
@@ -47,4 +47,3 @@ Roadmap
 1. More plugins on demand.
 2. Detecting presentation navigation and moving video accordingly.
 3. Alternative `script` configuration enabling to set a slide number to a time signature.
-4. Using inheretance for video and slide classes.
