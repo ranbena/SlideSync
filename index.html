@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Slidesync : Tool for displaying presentations synced with video" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Slidesync</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ranbena/SlideSync">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Slidesync</h1>
+          <h2 id="project_tagline">Tool for displaying presentations synced with video</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/ranbena/SlideSync/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/ranbena/SlideSync/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>A javascript sync tool for displaying a talk video alongside a presentation.</p>
+
+<p>Right now supports Youtube/Vimeo alongside Slideshare. Feel free to create or ask for the plugins you need.</p>
+
+<h2>Installation</h2>
+
+<ol>
+<li>Fork the project or download the zip.</li>
+<li>Create an HTML file based on a page in <a href="https://github.com/ranbena/SlideSync/tree/master/examples">examples</a>.</li>
+<li>
+<a href="https://github.com/ranbena/SlideSync/wiki/Plugins">Configure</a> your chosen plugins.</li>
+<li>Fill in the <code>script</code> array with the appropriate time signatures.</li>
+</ol><h2>Example configuration</h2>
+
+<pre><code>SlideSync.init({
+
+    "video": {
+        "id": "qspJiaIIIKI"
+    },
+
+    "slide": {
+        "doc": "mobilewebappdev-120203041131-phpapp02"
+    },
+
+    "script": [
+        "0:00",
+        "1:35",
+        "1:42",
+        "5:15",
+        "5:20",
+        "6:04",
+        "6:48",
+        "7:47",
+        "10:34",
+        "10:54",
+        "11:10"                    
+    ]    
+
+});
+</code></pre>
+
+<h2>Roadmap</h2>
+
+<ol>
+<li>More plugins on demand.</li>
+<li>Detecting presentation navigation and moving video accordingly.</li>
+<li>Alternative <code>script</code> configuration enabling to set a slide number to a time signature.</li>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Slidesync maintained by <a href="https://github.com/ranbena">ranbena</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
